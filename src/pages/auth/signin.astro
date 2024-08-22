@@ -1,0 +1,16 @@
+---
+import Layout from "../../components/Layout.astro";
+import AuthForm from "../../components/AuthForm.astro";
+
+const fields = [
+  { label: "Email", name: "email", type: "email", required: true },
+  { label: "Password", name: "password", type: "password", required: true },
+];
+---
+
+<Layout title="Sign In">
+  <h1>Sign In</h1>
+  <AuthForm action="/api/auth/signin" method="POST" fields={fields} />
+  <p><a href="/auth/reset-password">Forgot Password?</a></p>
+  <p>Don't have an account? <a href="/auth/signup">Sign Up</a></p>
+</Layout>
